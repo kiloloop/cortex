@@ -69,18 +69,21 @@ Keep it concise — 2-6 bullet points per section.
 Deliver the debrief to the cortex OACP workspace using `oacp send`:
 
 ```bash
-oacp send --project cortex --to sync --from claude --type debrief \
+oacp send cortex --from claude --to claude --type notification \
   --subject "Debrief: <project> <YYYY-MM-DD>" \
-  --body-file <temp_file>
+  --body-file <temp_file> \
+  --channel debrief \
+  --oacp-dir "$OACP_HOME"
 ```
 
 If `oacp send` is not available, fall back to `send_inbox_message.py`:
 
 ```bash
 python3 <scripts_dir>/send_inbox_message.py cortex \
-  --from claude --to sync --type notification \
+  --from claude --to claude --type notification \
   --subject "Debrief: <project> <YYYY-MM-DD>" \
   --body-file <temp_file> \
+  --channel debrief \
   --oacp-dir "$OACP_HOME"
 ```
 
