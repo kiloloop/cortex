@@ -1,0 +1,21 @@
+# Cortex configuration
+# Copy to config.yaml and edit for your setup
+
+# OACP workspace — cortex reads debriefs from here
+oacp_home: $OACP_HOME
+project: cortex
+
+# Where the cortex repo is cloned (skills reference this)
+cortex_dir: ~/cortex
+
+enrich_sources:
+  oacp_memory:
+    base_dir: $OACP_HOME/projects
+    pattern: "*/memory/*.md"
+
+  git_repos:
+    - path: ~/my-project
+      name: my-project
+      lookback_days: 1
+
+max_ssot_lines: 60
