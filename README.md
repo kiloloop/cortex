@@ -44,7 +44,7 @@ SESSION END (any repo, any runtime)       MORNING (cortex repo)
 
 1. **`/debrief`** runs at the end of every agent session (from any project repo). It captures a structured summary (what was done, decisions made, blockers, next steps) and sends it to the cortex OACP workspace via `oacp send`.
 
-2. **`/sync`** runs once daily (typically morning, from the cortex repo). It reads all unprocessed debriefs from `$OACP_HOME/projects/cortex/agents/*/inbox/`, enriches with project memory and git history, and rewrites `SSOT.md` — a compact (<60 lines) document that any agent can read at session start. Processed debriefs are moved to each agent's `outbox/`.
+2. **`/sync`** runs once daily (typically morning, from the cortex repo). It reads all unprocessed debriefs from `$OACP_HOME/projects/cortex/agents/*/inbox/`, enriches with project memory and git history, and rewrites `SSOT.md` — a compact (<60 lines) document that any agent can read at session start. Processed debriefs are deleted from the inbox after consumption.
 
 See [`SSOT.example.md`](SSOT.example.md) for a sample of what the generated output looks like.
 
