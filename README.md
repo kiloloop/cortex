@@ -65,6 +65,8 @@ Cortex uses OACP end-to-end: `oacp send` for debrief delivery, OACP workspace la
 
 ### Quick Start
 
+> **Note**: Skills are currently scaffold placeholders. The full `/debrief` and `/sync` implementations will land in a follow-up PR. The steps below describe the intended install flow.
+
 ```bash
 # Clone
 git clone https://github.com/kiloloop/cortex.git
@@ -114,6 +116,8 @@ max_ssot_lines: 60
 ```
 
 ## Usage
+
+> **Coming soon**: `/debrief` and `/sync` skill implementations are in progress. The commands below describe the intended workflow.
 
 ```bash
 # End of any session — capture what happened
